@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.Integer?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="479.0" prefWidth="426.0" styleClass="root" stylesheets="@styles/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gui.AddZimmerController">
+    <children>
+        <Label layoutX="122.0" layoutY="25.0" prefHeight="38.0" prefWidth="182.0" styleClass="modal-title" text="Neues Zimmer">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="17.0" layoutY="80.0" prefHeight="20.0" prefWidth="107.0" text="ZimmerNr">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Label>
+        <TextField fx:id="roomNrTxtfield" layoutX="16.0" layoutY="110.0" prefHeight="25.0" prefWidth="164.0" promptText="1" styleClass="input" />
+        <Label layoutX="233.0" layoutY="80.0" prefHeight="20.0" prefWidth="41.0" text="Etage">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Label>
+        <ChoiceBox fx:id="floorChoiceBox" layoutX="233.0" layoutY="110.0" prefHeight="31.0" prefWidth="172.0" styleClass="select">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <Integer fx:value="1" />
+                    <Integer fx:value="2" />
+                </FXCollections>
+            </items>
+            <value>
+                <Integer fx:value="1" />
+            </value>
+        </ChoiceBox>
+        <Label layoutX="17.0" layoutY="178.0" text="Fläche">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Label>
+        <ChoiceBox fx:id="areaChoicheBox" layoutX="16.0" layoutY="207.0" prefHeight="20.0" prefWidth="164.0" styleClass="select">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <Integer fx:value="50" />
+                    <Integer fx:value="100" />
+                    <Integer fx:value="200" />
+                </FXCollections>
+            </items>
+            <value>
+                <Integer fx:value="50" />
+            </value>
+        </ChoiceBox>
+        <Label layoutX="235.0" layoutY="178.0" prefHeight="20.0" prefWidth="39.0" text="Preis">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Label>
+        <Label fx:id="errorLabel" alignment="CENTER" layoutX="10.0" layoutY="440.0" prefHeight="18.0" prefWidth="406.0" textFill="#ff0900">
+            <font>
+                <Font size="13.0" />
+            </font></Label>
+        <TextField fx:id="costTxtfield" layoutX="235.0" layoutY="207.0" prefHeight="25.0" prefWidth="172.0" promptText="200" styleClass="input" />
+        <Button fx:id="addRoomBtn" layoutX="110.0" layoutY="398.0" mnemonicParsing="false" onAction="#onClickAddRoom" prefHeight="25.0" prefWidth="207.0" styleClass="add-btn" text="Add Zimmer" />
+    </children>
+</AnchorPane>
